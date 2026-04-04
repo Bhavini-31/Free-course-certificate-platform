@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+</head>
+<body>
+
+<h1>Free Certificate Courses</h1>
+
+{% for course in courses %}
+    <div style="margin-bottom:20px;">
+        <h3>{{ course.title }}</h3>
+        <p>Platform: {{ course.platform }}</p>
+        <a href="{{ course.link }}" target="_blank">Go to Course</a>
+    </div>
+{% empty %}
+    <p>No courses available</p>
+{% endfor %}
+
+</body>
+</html>
