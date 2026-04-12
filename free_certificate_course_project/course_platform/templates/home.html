@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 <h1 class="text-center mb-4">Free Certificate Platforms</h1>
@@ -13,9 +13,8 @@
             <div class="card text-center p-3 shadow-sm h-100">
 
                 <!-- Logo -->
-                <img src="{{ platform.logo }}"
-                     onerror="this.src='https://via.placeholder.com/100';"
-                     style="height:60px; object-fit:contain; margin-bottom:10px;">
+                <img src="{{ platform.logo }}" onerror="this.src='https://via.placeholder.com/100';"
+                    style="height:60px; object-fit:contain; margin-bottom:10px;">
 
                 <!-- Name -->
                 <h5>{{ platform.name }}</h5>
@@ -26,8 +25,7 @@
                 </p>
 
                 <!-- Button -->
-                <a href="{{ platform.link }}" target="_blank"
-                   class="btn btn-primary btn-sm mt-2">
+                <a href="{{ platform.link }}" target="_blank" class="btn btn-primary btn-sm mt-2">
                     Visit Platform
                 </a>
 
@@ -38,5 +36,35 @@
 
     </div>
 </div>
+
+<style>
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.57);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    background: url("{% static 'images/bg.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* remove grey overlay */
+.container {
+    background: transparent !important;
+}
+</style>
 
 {% endblock %}
