@@ -1,8 +1,48 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
-<h1>About Us</h1>
-<p>This website helps you find free certificate courses from different platforms.</p>
+<h1 class="text-center mb-4">About Us</h1>
+
+<div class="card p-4 shadow-sm">
+    <p>
+        Welcome to <b>CourseHub</b> 🎓 – a platform designed to help students find 
+        free online courses with certificates from trusted learning platforms.
+    </p>
+
+    <p>
+        Our website provides information about various platforms such as 
+        freeCodeCamp, Saylor Academy, HP LIFE, and Cisco Networking Academy 
+        where students can learn new skills and earn certificates.
+    </p>
+
+    <p>
+        Users can explore different courses, visit the official platforms, and 
+        improve their knowledge without any cost.
+    </p>
+
+    <p>
+        This project is developed using Python (Django) with proper frontend and backend integration 
+        as part of an academic lab project.
+    </p>
+</div>
+
+<style>
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3);}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    background: url("{% static 'images/bg.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+</style>
 
 {% endblock %}
