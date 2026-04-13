@@ -1,15 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import Platform
+from django.urls import path, include
+from . import views
 
-# Create your views here.
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
 
-def home(request):
-    platforms = Platform.objects.all()
-    return render(request, 'home.html', {'platforms': platforms})
+    # ✅ Signup (your custom view)
+    path('signup/', views.signup, name='signup'),
 
-def about(request):
-    return render(request, 'about.html')
-
-def contact(request):
-    return render(request, 'contact.html')
+    # ✅ Django built-in login/logout
+    path('accounts/', include('django.contrib.auth.urls')),
+]
