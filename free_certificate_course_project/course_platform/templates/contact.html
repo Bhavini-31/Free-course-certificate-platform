@@ -4,57 +4,77 @@
 
 <h1 class="text-center mb-4">Contact Us</h1>
 
-<div class="row">
+<p class="text-center mb-5">
+    Have questions, feedback, or suggestions? Feel free to reach out to any of the team members below.
+    We usually respond as soon as possible.
+</p>
 
-    <!-- Kiran -->
-    <div class="col-md-4 mb-4">
-        <div class="card p-3 text-center shadow-sm">
-            <h5>Bhavini Baghel</h5>
-            <p>bhavinibaghel2005@gmail.com</p>
-            <a href="www.linkedin.com/in/bhavini-baghel-a1581432b" target="_blank">LinkedIn Profile</a>
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+            <div class="card p-4 shadow-sm contact-box">
+
+                <h5 class="mb-3">Project Contact Information</h5>
+
+                <p class="mb-3">
+                    This platform is developed as an academic project. You can contact the developers directly
+                    using the details below.
+                </p>
+
+                <hr>
+
+                <p>
+                    <b>Bhavini Baghel:</b>
+                    <a href="mailto:bhavinibaghel2005@gmail.com">bhavinibaghel2005@gmail.com</a><br>
+
+                    <b>Aditi Kumari:</b>
+                    <a href="mailto:aditikumari23032006@gmail.com">aditikumari23032006@gmail.com</a><br>
+        
+                    <b>Kiran Muwel:</b>
+                    <a href="mailto:kirnmuwel@gmail.com">kirnmuwel@gmail.com</a>
+                </p>
+
+                <hr>
+
+                <h6>Professional Profiles</h6>
+
+                <p>
+                    <a href="https://www.linkedin.com/in/bhavini-baghel-a1581432b" target="_blank">
+                        LinkedIn Profile
+                    </a>
+                </p>
+
+            </div>
         </div>
-    </div>
 
-    <!-- Bhavini -->
-    <div class="col-md-4 mb-4">
-        <div class="card p-3 text-center shadow-sm">
-            <h5>Aditi Kumari</h5>
-            <p</p>
-            <a href="#" target="_blank">LinkedIn Profile</a>
-        </div>
     </div>
-
-    <!-- Aditi -->
-    <div class="col-md-4 mb-4">
-        <div class="card p-3 text-center shadow-sm">
-            <h5>Kiran Muwel</h5>
-            <p>kirnmuwel@gmail.com</p>
-            <a href="#" target="_blank">LinkedIn Profile</a>
-        </div>
-    </div>
-
 </div>
 
 <style>
-.card {
+.contact-box {
     border-radius: 12px;
-    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.95);
+    line-height: 1.8;
 }
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);}
+
+.contact-box a {
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
 
 body {
     min-height: 100vh;
     margin: 0;
-
     background: url("{% static 'images/bg.jpg' %}");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 </style>
 
 {% endblock %}
