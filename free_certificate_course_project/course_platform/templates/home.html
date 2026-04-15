@@ -2,7 +2,20 @@
 {% load static %}
 {% block content %}
 
-<h1 class="text-center mb-4">Free Certificate Platforms</h1>
+<!-- ⭐ HERO SECTION -->
+<div class="text-center mb-4">
+    <h1 class="fw-bold">Find Free Certificate Courses</h1>
+    <p class="text-muted">
+        Explore top learning platforms and start learning for free
+    </p>
+</div>
+
+<!-- 🔍 SEARCH BAR -->
+<form method="GET" class="mb-4">
+    <input type="text" name="q" class="form-control"
+        placeholder="Search free certificate platforms...">
+</form>
+
 
 <div class="container">
     <div class="row">
@@ -13,8 +26,9 @@
             <div class="card text-center p-3 shadow-sm h-100">
 
                 <!-- Logo -->
-                <img src="{{ platform.logo }}" onerror="this.src='https://via.placeholder.com/100';"
-                    style="height:60px; object-fit:contain; margin-bottom:10px;">
+                <img src="{{ platform.logo }}"
+                     onerror="this.src='https://via.placeholder.com/100';"
+                     style="height:60px; object-fit:contain; margin-bottom:10px;">
 
                 <!-- Name -->
                 <h5>{{ platform.name }}</h5>
@@ -28,12 +42,15 @@
                     {{ platform.description }}
                 </p>
 
-                <button id="btn-{{ platform.id }}" class="btn btn-link p-0" onclick="toggleDesc('{{ platform.id }}')">
+                <button id="btn-{{ platform.id }}"
+                        class="btn btn-link p-0"
+                        onclick="toggleDesc('{{ platform.id }}')">
                     Learn More
                 </button>
 
                 <!-- Button -->
-                <a href="{{ platform.link }}" target="_blank" class="btn btn-primary btn-sm mt-2">
+                <a href="{{ platform.link }}" target="_blank"
+                   class="btn btn-primary btn-sm mt-2">
                     Visit Platform
                 </a>
 
@@ -45,35 +62,22 @@
     </div>
 </div>
 
+<!-- CARD STYLING -->
 <style>
-    .card {
-        border: none;
-        border-radius: 12px;
-        transition: 0.3s ease;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.57);
-    }
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
-    }
-
-    body {
-        min-height: 100vh;
-        margin: 0;
-
-        background: url("{% static 'images/bg.jpg' %}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-
-    /* remove grey overlay */
-    .container {
-        background: transparent !important;
-    }
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
 </style>
+
+<!-- TOGGLE SCRIPT -->
 <script>
 function toggleDesc(id) {
     var shortText = document.getElementById("short-" + id);
@@ -90,5 +94,30 @@ function toggleDesc(id) {
         btn.innerText = "Learn More";
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+
+    const input = document.querySelector("input[name='q']");
+    const columns = document.querySelectorAll(".col-md-4");
+
+    input.addEventListener("keyup", function () {
+
+        let value = input.value.toLowerCase();
+
+        columns.forEach(col => {
+
+            let text = col.innerText.toLowerCase();
+
+            if (text.includes(value)) {
+                col.style.display = "";
+            } else {
+                col.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
 </script>
+
 {% endblock %}

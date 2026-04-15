@@ -6,9 +6,4 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
 
-    # ✅ Signup (your custom view)
-    path('signup/', views.signup, name='signup'),
-
-    # ✅ Django built-in login/logout
-    path('accounts/', include('django.contrib.auth.urls')),
 ]
